@@ -3357,9 +3357,11 @@ var render = function() {
       1
     ),
     _vm._v(" "),
-    _c("div", { staticClass: "alert alert-success" }, [
-      _vm._v("\n        " + _vm._s(_vm.success) + "\n    ")
-    ]),
+    _vm.success
+      ? _c("div", { staticClass: "alert alert-success" }, [
+          _vm._v("\n        " + _vm._s(_vm.success) + "\n    ")
+        ])
+      : _vm._e(),
     _vm._v(" "),
     _c("table", { staticClass: "table table-striped" }, [
       _c("thead", [

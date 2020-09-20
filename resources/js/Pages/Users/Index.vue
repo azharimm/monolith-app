@@ -3,7 +3,7 @@
         <div class="my-5">
             <inertia-link href="/users/create" class="btn btn-primary">Create User</inertia-link>
         </div>
-        <div class="alert alert-success">
+        <div v-if="success" class="alert alert-success">
             {{ success }}
         </div>
         <table class="table table-striped">
