@@ -71,7 +71,9 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::findOrFail($id);
+
+        return Inertia::render('Users/Edit', ['user' => $user]);
     }
 
     /**
@@ -83,7 +85,17 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required|email',
+        ]);
+
+        User::findOrFail($id)->update([
+            'name' => $request->name,
+            'email' => $request->email,
+        ]);
+
+        return redirect('/users')->with('success', 'User updated successfully');
     }
 
     /**
