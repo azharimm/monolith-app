@@ -1,5 +1,11 @@
 <template>
     <layout>
+        <div class="my-5">
+            <inertia-link href="/users/create" class="btn btn-primary">Create User</inertia-link>
+        </div>
+        <div class="alert alert-success">
+            {{ success }}
+        </div>
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -25,7 +31,7 @@
 <script>
 import Layout from "../../Shared/Layout";
 export default {
-    props: ['users'],
+    props: ['users', 'success'],
 	components: {
 		Layout,
 	},
